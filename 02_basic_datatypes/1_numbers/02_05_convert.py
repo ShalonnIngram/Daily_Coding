@@ -10,3 +10,23 @@ Demonstrate how to:
     Take note of what information is lost when some conversions take place.
 
 '''
+
+num_int = 5
+num_float = 75.2
+
+float_input = float(input("Please input a float. "))
+int_input = int(input("Please input a int. "))
+
+
+print(int(num_float))
+print(float(num_int))
+print(num_float // num_int)
+print(float_input * int_input)
+
+
+
+
+
+
+
+
