@@ -8,3 +8,8 @@ Use a loop to print the following table to the console:
  40 41 42 43 44 45 46 47 48 49
 
 '''
+your_list = list(range(0, 50))
+
+for i in range(0, len(your_list), 10):
+    chunk = your_list[i:i+10]
+    print(' '.join(list(map(str,chunk))))

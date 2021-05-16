@@ -17,3 +17,11 @@ Another example: if input is 3, you will output
 Hint: Think of nested for loops
 
 '''
+
+n = int(input("input a number: "))
+
+stars_list = []
+
+for i in range(1, n + 1):
+    stars_list.append("*" * i)
+print("\n".join(stars_list))
