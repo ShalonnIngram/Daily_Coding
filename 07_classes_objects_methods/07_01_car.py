@@ -9,3 +9,18 @@ Create at least two different objects of this Car class and demonstrate
 changing the objects attributes.
 
 '''
+class Car:
+    def __init__(self, model, year, max_speed):
+        self.model = model
+        self.year = year
+        self.max_speed = max_speed
+
+    def accelerate(self, add_speed=5):
+        self.max_speed += add_speed
+
+    def __str__(self):
+        return f"The car {self.model} was made in {self.year} and can go {self.max_speed} mph."
+my_car = Car("Porche", 2021, 55 )
+print(my_car)
+my_car.accelerate()
+print(my_car)
