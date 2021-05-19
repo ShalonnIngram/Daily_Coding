@@ -8,3 +8,17 @@ the script should handle:
 Test it and make sure it does not crash when you enter incorrect values.
 
 '''
+dividend = input("enter a number: ")
+divisor = input("enter another number: ")
+
+try:
+    print(dividend/divisor)
+except (TypeError, ZeroDivisionError):
+    print("you must enter a number other than zero, & not a word")
+
+
+
+
+
+
+
