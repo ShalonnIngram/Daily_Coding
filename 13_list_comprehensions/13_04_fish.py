@@ -7,3 +7,6 @@ Tip: Use an if statement in the listcomp
 '''
 
 fish_tuple = ('blowfish', 'clownfish', 'catfish', 'octopus')
+
+only_fish = [word for word in fish_tuple if word.endswith("fish")]
+print(only_fish)
