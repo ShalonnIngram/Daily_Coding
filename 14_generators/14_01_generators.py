@@ -3,3 +3,11 @@ Demonstrate how to create a generator object. Print the object to the console to
 Then iterate over the generator object and print out each item.
 
 '''
+
+# from the coursework
+
+gen = (x for x in range(1, 6))
+for i in gen:
+    num = i * i
+    print(num)
+
