@@ -6,5 +6,11 @@ and yields the element and its index
 
 '''
 
-def my_enumerate(# your arguments):
-      # pass
+
+def my_enumerate(list):
+    for i, j in enumerate(list):
+        print(i, j)
+
+
+fruits = [ "Apple","Berry","Cherry"]
+print(my_enumerate(fruits))
