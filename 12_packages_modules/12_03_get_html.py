@@ -9,3 +9,14 @@ TIP:
     very common. head over to SO and find a solution!
 
 '''
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://codingnomads.co"
+page = requests.get(url)
+soup = BeautifulSoup(page.content, 'html.parser')
+print(soup.prettify())
+
+
+
+
