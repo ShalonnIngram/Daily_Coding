@@ -1,3 +1,5 @@
+
+''' python 
 import requests
 from pprint import pprint
 
@@ -10,8 +12,7 @@ params = {
 response = requests.get("http://demo.codingnomads.co:8080/tasks_api/users", params=params)
 pprint(response.json())
 
-
-
+'''
 
 
 
