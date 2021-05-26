@@ -1,4 +1,4 @@
-
+```sql
 
 1) A query that will return the total number of employees.
 SELECT count(*) FROM employees.employees;
@@ -29,19 +29,12 @@ LIMIT 5;
 
 
 
-
-
-
-REDOO!!!!!!!!
 5) A query that will return the 10 newest employees.
-select first_name, last_name, hire_date
-from employees.employees
-where year(hire_date) = 2000
-order by hire_date asc
-limit 10;
-
-
-
+SELECT emp_no, hire_date
+FROM employees
+WHERE year(hire_date) = (SELECT max(year(hire_date)) maxdate FROM employees)
+ORDER BY 2 ASC
+LIMIT 10;
 
 
 
@@ -56,8 +49,45 @@ ON s.emp_no = e.emp_no
 ORDER BY sal DESC
 LIMIT 10;
 
+
 7) A query that will return the first name, last name, and salary of the highest paid manager.
+
+SELECT fname, lname, max(sal) 
+FROM
+    (SELECT e.first_name fname, e.last_name lname, s.salary sal
+	FROM employees e 
+	JOIN salaries s
+	ON s.emp_no = e.emp_no
+	JOIN titles t
+	ON t.emp_no = s.emp_no
+	WHERE t.title = "Manager") manager
+GROUP BY 1, 2
+ORDER BY 3 DESC
+LIMIT 1;
+
+
+
 
 8) A query that will return the first name, last name, and salary of the lowest paid manager.
 
+SELECT fname, lname, min(sal) 
+FROM
+    (SELECT e.first_name fname, e.last_name lname, s.salary sal
+	FROM employees e 
+	JOIN salaries s
+	ON s.emp_no = e.emp_no
+	JOIN titles t
+	ON t.emp_no = s.emp_no
+	WHERE t.title = "Manager") manager
+WHERE sal = 40000
+GROUP BY 1, 2;
+
+
 9) A query that will return the number of employees with each title (ie, Software Engineer)
+
+SELECT title, count(title)
+FROM employees.titles
+GROUP BY 1;
+
+
+```
