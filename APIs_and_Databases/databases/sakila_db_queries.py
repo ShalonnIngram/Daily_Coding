@@ -20,13 +20,14 @@ import pymysql
 from pprint import pprint
 
 
-engine = sqlalchemy.create_engine("mysql+pymysql://root:trublue6@localhost/sakila")
+engine = sqlalchemy.create_engine("mysql+pymysql://root:/sakila")
 connection = engine.connect()
 metadata = sqlalchemy.MetaData()
 actor = sqlalchemy.Table('actor', metadata, autoload=True, autoload_with=engine)
 film = sqlalchemy.Table('film', metadata, autoload=True, autoload_with=engine)
 film_actor = sqlalchemy.Table('film_actor', metadata, autoload=True, autoload_with=engine)
 category = sqlalchemy.Table('category', metadata, autoload=True, autoload_with=engine)
+film_category = sqlalchemy.Table('film_category', metadata, autoload=True, autoload_with=engine)
 
 
 # 1. Select all the actors with the first name of your choice
@@ -45,6 +46,11 @@ pprint(result_set)
 
 
 # 3. Select all the actors that have appeared in a category of a comedy of your choice
+
 # 4. Select all the comedic films and sort them by rental rate
+
 # 5. Using one of the statements above, add a GROUP BY statement of your choice
+
 # 6. Using one of the statements above, add a ORDER BY statement of your choice
+
+
