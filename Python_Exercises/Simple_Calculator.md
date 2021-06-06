@@ -2,11 +2,10 @@
 
 
 Instructions
-- Write a simple calculator that takes no more than two digits
+- Write a simple calculator 
 
 Topic Displayed
 - Loops
-- Control flow
 - Error Handling
 
 
@@ -32,5 +31,6 @@ else:
 
 num_1 = int(input("Please select a number no more than two digits. "))
 num_2 = int(input("Please select another number no more than two digits. "))
+
 print(simple_calculator(num_1, num_2))
 ```
