@@ -7,6 +7,7 @@ Instructions
 Topic Displayed
 - Loops
 - Control flow
+- Error Handling
 
 
 
