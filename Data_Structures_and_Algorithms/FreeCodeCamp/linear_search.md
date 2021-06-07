@@ -1,4 +1,4 @@
-# Linear_Search
+# Linear Search
 
 ```python
 
