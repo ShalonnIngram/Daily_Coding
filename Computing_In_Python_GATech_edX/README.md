@@ -2,7 +2,7 @@ Here you will find the problems completed which included
 
 # GTx's Introduction to Python Programming Professional Certificate from [edX](https://www.edx.org/professional-certificate/introduction-to-python-programming)
 
-### Contol Structures
+### Control Structures
 ### Conditionals
 ### Loops
 ### Functions
