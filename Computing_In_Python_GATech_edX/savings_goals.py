@@ -1,4 +1,4 @@
-```python 
+
 principal = 5000
 rate = 0.05
 time = 5
@@ -56,4 +56,4 @@ if amount <= goal:
 else:
     print("You'll exceed your goal by {}".format(rounded_diff_2))
 
-```
+
