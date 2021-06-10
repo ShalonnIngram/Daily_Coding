@@ -1,4 +1,4 @@
-```python
+
 egg = True
 milk = True
 butter = True
@@ -44,4 +44,4 @@ elif ingredients_one:
 else:
     print("Go to the store!")
 
-```
+
