@@ -1,4 +1,4 @@
-```python
+
 rating = "NC-17"
 age = 13
 
