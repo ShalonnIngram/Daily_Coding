@@ -1,4 +1,4 @@
-``` python
+
 years = 0
 months = 5
 days = 0
@@ -39,4 +39,4 @@ elif days >= 1 or months >= 1:
 else:
     print("yacht")
     
- ```
+ 
