@@ -31,4 +31,28 @@ verify(result)
 
 
 
+
+
+
+"""Basic binary search algorithm"""
+
+haystack = [7, 7, 22, 37, 47, 55, 57, 57, 86, 91]
+needle = int(input("Enter the number you are searching for: "))
+length = len(haystack)
+lower_bound = 0
+upper_bound = length - 1
+found = False
+
+while found == False and lower_bound <= upper_bound:
+    mid_point = (lower_bound + upper_bound) // 2
+    if haystack[mid_point] == needle:
+        print("You number has been found.")
+        found = True
+    elif haystack[mid_point] < needle:
+        lower_bound = mid_point + 1
+    else:
+        upper_bound = mid_point - 1
+if found == False:
+    print("Your number is not in the list.")
+
 ```
