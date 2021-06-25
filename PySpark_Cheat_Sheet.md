@@ -177,7 +177,7 @@ df = df.orderBy(df.age.asc()))
 df = df.orderBy(df.age.desc()))
 ```
 
-
+```python
 # AGGREGATES
 # Year wise summary of a selected portion of the dataset
 df.groupBy('year')\
