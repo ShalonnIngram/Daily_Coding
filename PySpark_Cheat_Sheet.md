@@ -319,6 +319,10 @@ df_books.where(length(col("book_name")) >= 20).show()
 
 df.groupBy("issue_d").count().orderBy(df.issue_d.desc()).show()
 
+
+df.groupBy("issue_d").count().orderBy(df.issue_d.desc()).show()
+df.filter("loan_status like '%Does%'").show()
+
 ```
 
 
