@@ -251,6 +251,73 @@ df = df.select(*(F.col(c) for c in df2.columns))
 # Batch Rename/Clean Columns
 for col in df.columns:
     df = df.withColumnRenamed(col, col.lower().replace(' ', '_').replace('-', '_'))
+    
+    
+    
+    
+    
+df.withColumn("term", when(df.term == "36 months", "36")
+                              .when(poke.term == "60 months", "60")
+                              .when(poke.term == "other", "null")).show()
+
+df.select([count(when(isnan(c) | col(c).isNull(), c)).alias(c) for c in df.columns]).show()
+
+Missing Values
+df.select([count(when(isnan(c), c)).alias(c) for c in df.columns]).show()
+
+Null Values
+df.select([count(when(col(c).isNull(), c)).alias(c) for c in df.columns]).show()
+
+
+drop rows with null values
+df.na.drop()
+
+
+
+drop only if null is in specific column
+df.dropna(subset="Name")
+
+
+
+Count Null and Missing Values
+df.select([count(when(isnan(c) | col(c).isNull(), c)).alias(c) for c in df.columns]).show()
+
+
+
+drop colum
+df.drop(df.names).show()
+
+
+columnsDrop = ["count", "count2"]
+poke.drop(*columnsDrop).show()
+
+
+drop nulls on specific column
+df.na.drop("all", subset=["column"])
+
+
+view count data on column
+select column, count(*) from df groupby column order by 2 desc
+
+
+drop rows will null values
+poke.na.drop().show()
+
+
+from pyspark.sql.functions import lit
+def fill_avg(df, colname):
+    return df.select(colname).agg(avg(colname))
+
+rev_avg = fill_avg(df, "column")
+
+rev_avg = fill_avg(df, "column").first()[0] ---> this takes the first item of the average and assigning it to the dataframe
+df = df.withColumn("rev_avg", lit(rev_avg))
+
+
+df.withColumn("test", F.length("addr_state")).show()
+df_books.where(length(col("book_name")) >= 20).show()
+
+df.groupBy("issue_d").count().orderBy(df.issue_d.desc()).show()
 
 ```
 
