@@ -323,6 +323,14 @@ df.groupBy("issue_d").count().orderBy(df.issue_d.desc()).show()
 df.groupBy("issue_d").count().orderBy(df.issue_d.desc()).show()
 df.filter("loan_status like '%Does%'").show()
 
+
+
+
+len(df.columns)
+
+# drop multiple columns
+col_names = ('lead_time', 'arrival_date_week_number', 'distribution_channel', 'agent', 'company')
+df = df.drop(*col_names)
 ```
 
 
