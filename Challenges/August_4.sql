@@ -19,3 +19,9 @@ from employee e
 left join bonus b
 on e.empid = b.empid
 where b.bonus < 1000 or bonus is null
+
+
+584. Find Customer Referee
+select name
+from customer
+where referee_id != 2 or referee_id is null
