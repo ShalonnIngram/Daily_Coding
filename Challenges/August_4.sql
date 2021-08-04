@@ -32,3 +32,11 @@ select customer_number
 from
     (select max(customer_number) as customer_number
     from orders) sub
+
+
+586. Customer Placing the Largest Number of Orders
+select customer_number
+from orders
+group by customer_number
+order by count(*) desc
+limit 1
