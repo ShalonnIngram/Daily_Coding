@@ -25,3 +25,10 @@ where b.bonus < 1000 or bonus is null
 select name
 from customer
 where referee_id != 2 or referee_id is null
+
+
+586. Customer Placing the Largest Number of Orders
+select customer_number
+from
+    (select max(customer_number) as customer_number
+    from orders) sub
