@@ -6,3 +6,15 @@ with cte as (
 )
 select player_id, device_id
 from cte
+
+
+
+619. Biggest Single Number
+with cte as (
+    select num, count(num) sum
+    from my_numbers
+    group by 1
+)
+select max(num) num
+from cte
+where sum = 1
