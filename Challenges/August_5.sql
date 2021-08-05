@@ -28,3 +28,9 @@ from sales s
 join product p
 on s.product_id = p.product_id
 group by sale_id
+
+
+1069. Product Sales Analysis II
+select product_id, sum(quantity) total_quantity
+from sales s
+group by 1
