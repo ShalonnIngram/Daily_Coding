@@ -35,6 +35,7 @@ select product_id, sum(quantity) total_quantity
 from sales s
 group by 1
 
+
 1075. Project Employees I
 select project_id, round(avg(experience_years), 2) average_years
 from project p
@@ -42,3 +43,11 @@ join employee e
 on p.employee_id = e.employee_id
 group by 1
 
+
+
+1741. Find Total Time Spent by Each Employee
+select event_day day,
+       emp_id,
+       sum(out_time - in_time) total_time
+from employees
+group by 1, 2
