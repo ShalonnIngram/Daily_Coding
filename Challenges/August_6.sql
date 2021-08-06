@@ -125,3 +125,16 @@ from views
 where author_id = viewer_id
 order by 1 asc
 
+
+
+
+1082. Sales Analysis I
+with cte as (
+    select seller_id,
+    rank() over (order by sum(price) desc) as rnk
+    from sales
+    group by 1
+)
+select seller_id
+from cte
+where rnk = 1
