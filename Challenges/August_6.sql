@@ -70,3 +70,15 @@ with cte as (
 select actor_id, director_id
 from cte
 where act_count >= 3 and dir_count >= 3
+
+OR 
+
+
+with cte as (
+    select *,
+    rank() over (partition by actor_id, director_id order by timestamp) as rnk
+    from actordirector
+)
+select actor_id, director_id
+from cte
+where rnk >= 3
