@@ -138,3 +138,16 @@ with cte as (
 select seller_id
 from cte
 where rnk = 1
+
+
+
+
+1084. Sales Analysis III
+select distinct s.product_id, product_name
+from product p
+join sales s
+on p.product_id = s.product_id
+where s.product_id not in 
+    (select product_id 
+     from Sales 
+     where sale_date < '2019-01-01' or sale_date > '2019-03-31')
