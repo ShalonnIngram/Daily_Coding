@@ -90,3 +90,16 @@ select actor_id, director_id
 from actordirector
 group by 1, 2
 having count(*) >= 3
+
+
+
+
+1076. Project Employees II
+with cte as (
+    select project_id, sum(employee_id) emp
+    from project
+    group by 1
+)
+select project_id 
+from cte
+having max(emp)
