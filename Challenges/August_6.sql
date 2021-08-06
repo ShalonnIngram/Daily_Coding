@@ -6,7 +6,6 @@ where year(time_stamp) = '2020'
 group by 1
 
 
-
 1795. Rearrange Products Table
 select product_id,
       'store1' store,
@@ -29,3 +28,16 @@ select product_id,
       store3 price
 from products
 where store3 is not null
+
+
+1083. Sales Analysis II
+select distinct buyer_id
+from sales s
+join product p
+on s.product_id = p.product_id
+where product_name = 'S8' and buyer_id not in
+    (select buyer_id
+    from sales s
+    join product p
+    on s.product_id = p.product_id
+    where product_name = 'iPhone')
