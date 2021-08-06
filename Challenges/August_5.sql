@@ -20,6 +20,7 @@ from cte
 where sum = 1
 
 
+
 1068. Product Sales Analysis I
 select product_name, 
        year,
@@ -30,10 +31,12 @@ on s.product_id = p.product_id
 group by sale_id
 
 
+
 1069. Product Sales Analysis II
 select product_id, sum(quantity) total_quantity
 from sales s
 group by 1
+
 
 
 1075. Project Employees I
@@ -63,3 +66,11 @@ where sales_id not in
     join orders o
     on c.com_id = o.com_id
     where c.name = 'RED')
+
+
+1873. Calculate Special Bonus
+select employee_id,
+       case
+            when employee_id % 2 = 1 and name not like 'M%' then salary else 0
+       end as bonus
+from employees
