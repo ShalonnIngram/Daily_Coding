@@ -41,3 +41,10 @@ where product_name = 'S8' and buyer_id not in
     join product p
     on s.product_id = p.product_id
     where product_name = 'iPhone')
+
+
+
+1757. Recyclable and Low Fat Products
+select product_id
+from products p
+where low_fats = 'Y' and recyclable = 'Y'
