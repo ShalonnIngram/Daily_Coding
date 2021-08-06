@@ -48,3 +48,9 @@ where product_name = 'S8' and buyer_id not in
 select product_id
 from products p
 where low_fats = 'Y' and recyclable = 'Y'
+
+
+1069. Product Sales Analysis II
+select product_id, sum(quantity) total_quantity
+from sales
+group by 1
