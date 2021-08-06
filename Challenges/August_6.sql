@@ -71,6 +71,7 @@ select actor_id, director_id
 from cte
 where act_count >= 3 and dir_count >= 3
 
+
 OR 
 
 
@@ -82,3 +83,10 @@ with cte as (
 select actor_id, director_id
 from cte
 where rnk >= 3
+
+OR
+
+select actor_id, director_id
+from actordirector
+group by 1, 2
+having count(*) >= 3
