@@ -28,3 +28,10 @@ group by 1
 select name, balance
 from cte
 where balance > 10000
+
+
+
+178. Rank Scores
+select score,
+dense_rank() over (order by score desc) `Rank`
+from scores
