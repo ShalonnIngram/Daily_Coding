@@ -1,6 +1,6 @@
 # Python Programming
 
-Here you can find coding exercises I've completed
+Here you will find my coding challenges
 
 ---
 
