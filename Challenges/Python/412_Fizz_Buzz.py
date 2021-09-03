@@ -1,5 +1,4 @@
-class Solution:
-    def fizzBuzz(self, n: int) -> List[str]:
+     def fizzBuzz(self, n: int) -> List[str]:
         result = []
         
         for i in range(1, n + 1):
