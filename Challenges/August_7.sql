@@ -1,10 +1,4 @@
 
-178. Rank Scores
-select score,
-dense_rank() over (order by score desc) `Rank`
-from scores
-
-
 184. Department Highest Salary
 select Department, 
        Employee,
