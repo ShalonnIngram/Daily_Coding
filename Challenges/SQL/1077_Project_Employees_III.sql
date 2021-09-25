@@ -1,4 +1,4 @@
-with cte as(
+with cte as (
 select p.project_id project_id,
        p.employee_id employee_id,
        experience_years,
