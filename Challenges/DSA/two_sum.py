@@ -11,8 +11,8 @@ nums = [2, 1, 9, 22, 41, 52, 12]
 target = 13
 
 
-Time O(n)
-Space O(n)
+Time Complexity: O(n)
+Space Complexity:  O(n)
 # create an empty hash map
 # iterate over the list, we need the index & value
 # create a difference variable that returns the difference between the target & the value
