@@ -1,0 +1,6 @@
+
+
+select e.name
+from employee e 
+left join employee ee on e.id = ee.managerId
+having count(ee.name) >= 5
