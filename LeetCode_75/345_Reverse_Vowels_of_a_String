@@ -1,0 +1,27 @@
+
+Stack Solution (extra space)
+1. initiate a stack
+2. iteriate over entire string
+3. append each character to the stack
+4. create a pointer
+5. while loop to iterate over stack while characters are in the string pop the top of the stack & set it to the beginning of the strings index
+6. increment the pointer
+
+def reverseVowels(self, s):
+        stack = []
+        for v in s:
+            stack.append(v)
+        
+        i = 0
+        while stack:
+            s[i] = stack.pop()
+            i += 1
+
+
+
+Recursive Solution 
+def revers(l, r):
+  if l < r:
+      s[l], s[r] = s[r], s[l]
+      reverse(l + 1, r - 1)
+reverse(0, len(s) - 1)
