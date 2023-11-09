@@ -1,0 +1,18 @@
+
+1. Convert the list to sets & create result sets
+2. iterate over list, if n is not in the second set add it otherwise add to result set
+3. convert return the result sets from set to list
+
+    def findDifference(self, nums1, nums2):
+        nums1set, nums2set = set(nums1), set(nums2)
+        res1, res2 = set(), set()
+
+        for i in nums1:
+            if i not in nums2set:
+                res1.add(i)
+
+        for i in nums2:
+            if i not in nums1set:
+                res2.add(i)
+
+        return [list(res1), list(res2)]
