@@ -1,0 +1,28 @@
+lambda function to return first row of csv data 
+
+import json
+import boto3
+import time
+import csv 
+import io
+from datetime import datetime
+
+s3_client = boto3.client('s3')
+
+def lambda_handler(bucket_name, file_key):
+    
+    bucket_name = 'marketingshalonn'
+    file_key = 'faker_data.csv'
+    
+    response = s3_client.get_object(Bucket=bucket_name, Key=file_key)
+
+    csv_content = response['Body'].read().decode('utf-8')
+    csv_file = io.StringIO(csv_content)
+        
+    # Parse the CSV content
+    csv_reader = csv.reader(csv_file)
+        
+    # Get the first row of the CSV
+    first_row = next(csv_reader)
+
+    return first_row
